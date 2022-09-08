@@ -7,9 +7,13 @@ a{
   }
 
 .button {
-  border: 1px solid black;
+  /* border: 1px solid black; */
+  border: 1px solid #153e7b;
+  /* padding: 10px 20px; */
+  padding: 9px 18px;
+  // border: 1px solid black;
   border-radius: $border-radius * 4;
-  padding: 10px 20px;
+  // padding: 10px 20px;
   display: inline-block;
   text-decoration: none;
   font-family: "Open Sans", sans-serif;
@@ -46,7 +50,8 @@ a{
 
 .button-main {
   color: $white;
-  background-color: $main;
+  //background-color: $main;
+  background-color: #153e7b;
 }
 
 .button-main:hover, .button-main:active {

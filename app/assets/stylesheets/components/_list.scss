@@ -8,6 +8,8 @@
 }
 
 .list-header {
+  box-shadow: 2px 3px 4px 0px rgba(84, 84, 81, 28%);
+  padding-bottom: 1px;
   padding-top: $spacer*0.5;
   color: $white;
   margin: 10px 10px 10px 10px;
@@ -42,10 +44,10 @@
 }
 
 .add-new {
+  box-shadow: 2px 3px 4px 0px rgba(140, 140, 135, 3%);
   text-align: center;
 
   color: rgba(84,84,81,0.28);
-  box-shadow: none;
   /* border: 3px dashed; */
   /* border: 3px dashed; */
   /* background-color: #EBEBEB; */
