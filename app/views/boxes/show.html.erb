@@ -8,8 +8,8 @@
     </div>
   </div>
   <div>
-    <p class='mb-3'><strong>About: </strong><%= @box.description %></p>
-    <p class='pb-2'><strong>In collection: </strong>
+    <p class='mb-3'><strong>about</strong><%= @box.description %></p>
+    <p class='pb-2'><strong>in collection</strong>
       <%= link_to collection_path(@box.collection), class:"text-white text-decoration-underline" do %>
         <%=@box.collection.name %>
       <% end %>
@@ -17,16 +17,8 @@
   </div>
 </div>
 <div class="list" >
-  <h4>Items in this box:</h4>
-  <div data-controller="edit-resource">
-    <div class="list-item add-new" data-edit-resource-target="infos">
-      <span class="material-symbols-outlined card-icon add-icon" data-action="click->edit-resource#displayForm">add</span>
-    </div>
-    <%= simple_form_for [@box, @item], html: { class: 'list-item add-new d-none', data: { edit_resource_target: 'form' } } do |f| %>
-      <%= f.input :name, label: "Item name", input_html: { required: true} %>
-      <%= f.submit "Create", class: "button-main button" %>
-      <%= link_to "Cancel", box_path(@box), class: "button" %>
-    <% end %>
+  <h4>items in this box</h4>
+
     <% @box.items.each_with_index do |item, index| %>
     <div class="list-container">
       <div class="list-item list-item-info" data-edit-resource-target="infos" data-index='<%= index %>' data-action="click->edit-resource#displayForm">
@@ -44,6 +36,15 @@
         <%= f.submit "Update", class:"button button-main" %>
         <%= link_to "Cancel", box_path(@box), class: "button" %>
       <% end %>
+    <% end %>
+    <div data-controller="edit-resource">
+    <div class="list-item add-new" data-edit-resource-target="infos">
+      <span class="material-symbols-outlined card-icon add-icon" data-action="click->edit-resource#displayForm">add</span>
+    </div>
+    <%= simple_form_for [@box, @item], html: { class: 'list-item add-new d-none', data: { edit_resource_target: 'form' } } do |f| %>
+      <%= f.input :name, label: "Item name", input_html: { required: true} %>
+      <%= f.submit "Create", class: "button-main button" %>
+      <%= link_to "Cancel", box_path(@box), class: "button" %>
     <% end %>
   </div>
 </div>
