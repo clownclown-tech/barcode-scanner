@@ -8,8 +8,8 @@
     </div>
   </div>
   <div>
-    <p class='mb-3'><strong>about</strong><%= @box.description %></p>
-    <p class='pb-2'><strong>in collection</strong>
+    <%# <p class='mb-3'><strong>about:</strong><%=  @box.description %>
+    <p class='pb-2'><strong>in Collection: </strong>
       <%= link_to collection_path(@box.collection), class:"text-white text-decoration-underline" do %>
         <%=@box.collection.name %>
       <% end %>
@@ -17,7 +17,7 @@
   </div>
 </div>
 <div class="list" >
-  <h4>items in this box</h4>
+  <h4>Items in this Box</h4>
 
     <% @box.items.each_with_index do |item, index| %>
     <div class="list-container">
@@ -33,8 +33,8 @@
     </div>
       <%= simple_form_for [item], html: { class: 'list-item d-none', data: { edit_resource_target: 'form' } } do |f| %>
         <%= f.input :name, label: false, input_html: { required: true} %>
-        <%= f.submit "update", class:"button button-main" %>
-        <%= link_to "cancel", box_path(@box), class: "button" %>
+        <%= f.submit "Update", class:"button button-main" %>
+        <%= link_to "Cancel", box_path(@box), class: "button" %>
       <% end %>
     <% end %>
     <div data-controller="edit-resource">
@@ -43,8 +43,8 @@
     </div>
     <%= simple_form_for [@box, @item], html: { class: 'list-item add-new d-none', data: { edit_resource_target: 'form' } } do |f| %>
       <%= f.input :name, label: "Item name", input_html: { required: true} %>
-      <%= f.submit "create", class: "button-main button" %>
-      <%= link_to "cancel", box_path(@box), class: "button" %>
+      <%= f.submit "Create", class: "button-main button" %>
+      <%= link_to "Cancel", box_path(@box), class: "button" %>
     <% end %>
   </div>
 </div>
@@ -68,5 +68,6 @@
 .secondary-text-light {
   margin: 10px;
 }
+
 
 </style>
