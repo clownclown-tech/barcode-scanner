@@ -82,7 +82,8 @@ border:solid;
 }
 
 .button-print{
-  color: $main;
+  width: -webkit-fill-available;
+  color: black;
 }
 
 .button-print:hover, .button-print:active{
