@@ -8,7 +8,7 @@
     </div>
   </div>
   <div class="list">
-    <h4>your Collections</h4>
+    <h4>Your Collections</h4>
 
       <% @collections.each_with_index do |collection, index| %>
         <div class="list-container">
@@ -37,7 +37,7 @@
       <% end %>
       <div data-controller="edit-resource">
       <div class="list-item add-new" data-edit-resource-target="infos">
-        <span class="material-symbols-outlined card-icon add-icon" data-action="click->edit-resource#displayForm">add</span>
+        <span class="material-symbols-outlined" data-action="click->edit-resource#displayForm">add</span>
       </div>
       <%= simple_form_for [@collection] , html: { class: 'd-none list-item add-new', data: { edit_resource_target: 'form' } } do |f| %>
         <%= f.input :name, input_html: { required: true } %>
