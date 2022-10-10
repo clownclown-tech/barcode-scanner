@@ -15,7 +15,7 @@
         </span>
       <% end %>
       <% @collection.collaborators.each do |collaborator| %>
-        <li class="mx-1">
+        <li class="">
           <span class="avatar">
             <%= collaborator.avatar.attached? ? cl_image_tag(collaborator.avatar.key, class: "avatar-pic") : "#{collaborator.first_name[0].capitalize}  #{collaborator.last_name[0].capitalize}" %>
           </span>
