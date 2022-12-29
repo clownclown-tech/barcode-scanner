@@ -1,0 +1,6 @@
+development:
+  cloud_name: <%= ENV['doxitox999'] %>
+  api_key: <%= ENV['572648249823668'] %>
+  api_secret: <%= ENV['iVWwqu8LYO4YSaxo57ChlQdzYak'] %>
+  enhance_image_tag: true
+  static_file_support: false
