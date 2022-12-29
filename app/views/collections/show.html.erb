@@ -5,8 +5,10 @@
       <h1><%= @collection.name.capitalize %></h1>
     </div>
   </div>
-  <p class='mb-3'><strong>about: </strong><%= @collection.description %></p>
-  <p class='secondary-text-light'>shared with:</p>
+
+  <p class='mb-3'><strong></strong><%#= @collection.description %></p>
+  <%# <p class='secondary-text-light'>shared with:</p> %>
+
   <div class="users">
     <ul class="d-flex list-unstyled">
       <% unless @collection.owner == current_user %>
@@ -45,7 +47,6 @@
           <%= link_to box_qrcode_path(box) do %>
             <span class="material-symbols-outlined card-icon me-1">qr_code_2</span>
           <% end %>
-          <span class="material-symbols-outlined card-icon me-1" data-index='<%= index %>' data-action="click->edit-resource#displayForm">edit</span>
           <%= link_to box_path(box), method: :delete, data: { confirm: "Are you sure?" } do %>
             <span class="material-symbols-outlined card-icon">delete</span>
           <% end %>
