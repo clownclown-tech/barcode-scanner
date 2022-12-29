@@ -8,26 +8,32 @@
     </div>
   </div>
   <div class="list">
-    <h4>Your Collections</h4>
+
 
       <% @collections.each_with_index do |collection, index| %>
         <div class="list-container">
+
           <%= link_to collection_path(collection) do %>
             <div class="list-item" data-edit-resource-target="infos">
-              <h3><%= collection.name %></h3>
+
+              <div style="display:flex;">
+                <span class="avatar">
+                      <%= collection.owner.avatar.attached? ? cl_image_tag(collection.owner.avatar.key, class: "avatar-pic") : "#{collection.owner.first_name[0].capitalize}  #{collection.owner.last_name[0].capitalize}" %>
+                </span>
+                <h3><%= collection.name %></h3>
+              </div>
+
               <div class="secondary-text row align-items-end justify-content-between mt-3">
                 <p class='col'><%= collection.boxes.count %> Boxes inside</p>
-                <p class='col-auto me-5'>Owner:</p>
               </div>
+
             </div>
-          <% end %>
-          <div class="icons-container d-flex flex-column align-items-end" data-edit-resource-target="icons">
-            <span class="material-symbols-outlined card-icon me-1" data-index='<%= index %>' data-action="click->edit-resource#displayForm">edit</span>
-            <span class="avatar">
-              <%= collection.owner.avatar.attached? ? cl_image_tag(collection.owner.avatar.key, class: "avatar-pic") : "#{collection.owner.first_name[0].capitalize}  #{collection.owner.last_name[0].capitalize}" %>
-            </span>
-          </div>
+
         </div>
+
+      <% end %>
+
+
         <%= simple_form_for [ collection ], html: { class: 'd-none list-item', data: { edit_resource_target: 'form' } } do |f| %>
         <%= f.input :name, label: "Collection name", input_html: { required: true } %>
         <%= f.input :description, label: "Collection description", input_html: { required: true, minlength: 8 } %>
@@ -56,5 +62,7 @@
       <%= link_to "Sign Up", new_user_registration_path, class:"button button-main" %>
       <%= link_to "Login", new_user_session_path, class:"ms-3 button button-secondary" %>
     </div>
+              <h6 class="subline"><br><br>as this is developed for mobile use <br> please use it on your mobile, it´s a PWA, <br>you can install it on your Home screen, <br> with "Add to Home screen" function, <br>in your browser </h6>
+
   </div>
 <%end%>
