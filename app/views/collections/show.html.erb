@@ -1,38 +1,6 @@
-<div class="list-header">
-  <div class="list-title">
-    <div class="d-flex align-items-center">
-      <span class="material-symbols-outlined category-icon">widgets</span>
-      <h1><%= @collection.name.capitalize %></h1>
-    </div>
-  </div>
 
-  <p class='mb-3'><strong></strong><%#= @collection.description %></p>
-  <%# <p class='secondary-text-light'>shared with:</p> %>
-
-  <div class="users">
-    <ul class="d-flex list-unstyled">
-      <% unless @collection.owner == current_user %>
-        <span class="avatar me-1">
-          <%= @collection.owner.avatar.attached? ? cl_image_tag(@collection.owner.avatar.key, class: "avatar-pic") : "#{@collection.owner.first_name[0].capitalize}  #{@collection.owner.last_name[0].capitalize}" %>
-        </span>
-      <% end %>
-      <% @collection.collaborators.each do |collaborator| %>
-        <li class="">
-          <span class="avatar">
-            <%= collaborator.avatar.attached? ? cl_image_tag(collaborator.avatar.key, class: "avatar-pic") : "#{collaborator.first_name[0].capitalize}  #{collaborator.last_name[0].capitalize}" %>
-          </span>
-          <%= link_to user_collection_path(UserCollection.find_by(user: collaborator, collection: params[:id])), method: :delete, data: { confirm: "Are you sure?" } do %>
-            <i class="fas fa-minus avatar avatar-remove"></i>
-          <% end %>
-        </li>
-      <% end %>
-      <%= link_to new_collection_user_collection_path(@collection, @user_collection) do %>
-        <span class="material-symbols-outlined card-icon add-icon avatar avatar-add" data-action="click->edit-resource#displayForm">add</span>
-      <% end %>
-    </ul>
-  </div>
-</div>
 <div class="list">
+
   <h4>Boxes in this Collection</h4>
 
     <% @collection.boxes.each_with_index do |box, index| %>
@@ -61,7 +29,7 @@
     <% end %>
     <div data-controller="edit-resource">
     <div class="list-item add-new" data-edit-resource-target="infos">
-      <span class="material-symbols-outlined card-icon add-icon" data-action="click->edit-resource#displayForm">add</span>
+      <span class="" data-action="click->edit-resource#displayForm">add a box</span>
     </div>
     <%= simple_form_for [@collection, @box], html: { class: 'd-none list-item add-new', data: { edit_resource_target: 'form' } } do |f| %>
       <%= f.input :name, label: "Box name", input_html: { required: true } %>

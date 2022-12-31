@@ -1,22 +1,3 @@
-<div class="list-header">
-  <div class="list-title">
-    <div class="d-flex align-items-center">
-
-      <span class=" category-icon material-symbols-outlined">inventory_2</span>
-
-      <h1><%= @box.name.capitalize %></h1>
-    </div>
-  </div>
-  <div>
-    <%# <p class='mb-3'><strong>about:</strong><%=  @box.description %>
-    <p class='pb-2'><strong>in Collection: </strong>
-      <%= link_to collection_path(@box.collection), class:"text-white text-decoration-underline" do %>
-        <%=@box.collection.name %>
-      <% end %>
-    </p>
-  </div>
-</div>
-<div class="list" >
   <h4>Items in this Box</h4>
 
     <% @box.items.each_with_index do |item, index| %>
@@ -39,7 +20,7 @@
     <% end %>
     <div data-controller="edit-resource">
     <div class="list-item add-new" data-edit-resource-target="infos">
-      <span class="material-symbols-outlined card-icon add-icon" data-action="click->edit-resource#displayForm">add</span>
+      <span class="" data-action="click->edit-resource#displayForm">add a item</span>
     </div>
     <%= simple_form_for [@box, @item], html: { class: 'list-item add-new d-none', data: { edit_resource_target: 'form' } } do |f| %>
       <%= f.input :name, label: "Item name", input_html: { required: true} %>

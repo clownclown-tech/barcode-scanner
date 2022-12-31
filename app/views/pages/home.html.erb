@@ -1,14 +1,6 @@
 <% if user_signed_in? %>
-  <div class="list-header">
-    <div class="list-title">
-      <div class="d-flex align-items-center">
-        <span class="material-symbols-outlined category-icon">home</span>
-        <h1>Dashboard</h1>
-      </div>
-    </div>
-  </div>
+<h4>Collections</h4>
   <div class="list">
-
 
       <% @collections.each_with_index do |collection, index| %>
         <div class="list-container">
@@ -28,11 +20,8 @@
               </div>
 
             </div>
-
         </div>
-
       <% end %>
-
 
         <%= simple_form_for [ collection ], html: { class: 'd-none list-item', data: { edit_resource_target: 'form' } } do |f| %>
         <%= f.input :name, label: "Collection name", input_html: { required: true } %>
@@ -41,9 +30,9 @@
         <%= link_to "Cancel", root_path, class: "button" %>
       <% end %>
       <% end %>
-      <div data-controller="edit-resource">
+      <div data-controller="edit-resource" class="">
       <div class="list-item add-new" data-edit-resource-target="infos">
-        <span class="material-symbols-outlined" data-action="click->edit-resource#displayForm"><p>add collection</p></span>
+        <span class="" data-action="click->edit-resource#displayForm"><p>add a collection</p></span>
       </div>
       <%= simple_form_for [@collection] , html: { class: 'd-none list-item add-new', data: { edit_resource_target: 'form' } } do |f| %>
         <%= f.input :name, input_html: { required: true } %>
@@ -53,6 +42,7 @@
       <% end %>
     </div>
   </div>
+
 <%else%>
   <div class="first-image">
     <h1 class="first-line">BOX</h1>
