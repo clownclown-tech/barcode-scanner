@@ -11,7 +11,7 @@ class BoxesController < ApplicationController
     @collection = Collection.find(params[:collection_id])
     @box.collection = @collection
     if @box.save
-      redirect_to box_path(@box)
+      redirect_to collection_path(@collection)
     else
       render :new
     end

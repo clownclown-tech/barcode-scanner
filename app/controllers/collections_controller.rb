@@ -10,7 +10,7 @@ class CollectionsController < ApplicationController
     @collection.save
     if @collection.save
       UserCollection.create(user: current_user, collection: @collection, kind: :owner)
-      redirect_to collection_path(@collection)
+      redirect_to root_path
     else
       render 'pages/home'
     end
