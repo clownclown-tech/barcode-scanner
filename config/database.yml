@@ -84,3 +84,5 @@ production:
   database: boxtag_production
   username: boxtag
   password: <%= ENV['BOXTAG_DATABASE_PASSWORD'] %>
+
+
