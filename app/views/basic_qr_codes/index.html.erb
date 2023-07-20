@@ -1,10 +1,5 @@
 <br>
-
-<h6 class="" style="font-weight:350;text-align:center;">please scann QR CODE, you will be <br>redirected to your box items</h6>
-
-
-
-
+<h6 class="" style="font-weight:350;text-align:center;">please scann QR CODE, you will be <br>redirected to your site</h6>
 
 
 <div class="box" style="margin:auto;margin-top:15px;">
@@ -17,7 +12,7 @@
 <h6 style="text-align:center;"><a id="result" href="result" style="color:red;font-weight:550;text-decoration: underline red;"></a></h6>
 
 <div class="d-flex justify-content-center">
-<button class="btn btn-secondary">save to List</button>
+<button class="btn btn-secondary" onclick="saveTextToLocalStorage()">save to List</button>
 </div>
 
 
@@ -26,8 +21,40 @@
 <%= audio_tag "beep.mp3", id: "beep-audio"%>
 
 
-<style>
+<script>
 
+ // Function to save text to local storage
+  function saveTextToLocalStorage() {
+    const textArea = document.getElementById('result');
+    const text = textArea.value.trim();
+
+    if (text !== '') {
+      // Retrieve the existing texts from local storage or create an empty array
+      let texts = JSON.parse(localStorage.getItem('savedTexts')) || [];
+
+      // Append the new text to the array
+      texts.push(text);
+
+      // Save the updated array back to local storage
+      localStorage.setItem('savedTexts', JSON.stringify(texts));
+
+      textArea.value = '';
+      alert('Text saved to local storage!');
+    } else {
+      alert('Please enter a text to save.');
+    }
+  }
+
+
+</script>
+
+
+
+
+
+
+
+<style>
 .box {
   width:80%;
   height:80%;
