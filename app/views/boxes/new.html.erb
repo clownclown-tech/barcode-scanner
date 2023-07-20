@@ -1,9 +1,0 @@
-<div class="container">
-<h2>Add a box</h2>
-  <%= simple_form_for [ @collection, @box] do |f| %>
-    <%= f.input :name %>
-    <%#= f.input :description %>
-    <%= f.submit "create", class: "button-main button" %>
-    <%= link_to "cancel", collection_path(@collection), class: "button" %>
-  <% end%>
-</div>

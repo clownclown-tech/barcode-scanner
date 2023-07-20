@@ -1,9 +1,0 @@
-  <div class="container">
-    <h1>update the box</h1>
-    <%= simple_form_for [ @box ] do |f| %>
-      <%= f.input :name %>
-      <%#= f.input :description %>
-      <%= f.submit "update", class: "button-main button" %>
-      <%= link_to "cancel", box_path(@box), class: "button" %>
-    <% end%>
-  </div>

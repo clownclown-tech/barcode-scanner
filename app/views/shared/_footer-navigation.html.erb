@@ -1,34 +1,14 @@
-<%# <script>
-    document
-      .getElementById("cameraFileInput")
-      .addEventListener("change", function () {
-    document
-      .getElementById("pictureFromCamera")
-      .setAttribute("src", window.URL.createObjectURL(this.files[0]));
-  });
-</script> %>
-
 
 <div class="footer-navigation">
   <div class="button-container">
 
-<%# non scaning camera activation %>
-<%# <label class="cameraButton"><i class="fas fa-qrcode"></i>
-    <input type="File" accept="image/*;capture=camera" capture/>
-</label> %>
+    <%#= link_to basic_qr_code_reader_path do%>
+      <%# <span class="material-symbols-outlined navigation-icon">qr_code_scanner</span> %>
+    <%# end %>
 
+    <%# <span class="material-symbols-outlined navigation-icon">search</span> %>
 
-    <%= link_to basic_qr_code_reader_path do%>
-      <span class="material-symbols-outlined navigation-icon">qr_code_scanner</span>
-    <% end %>
-
-    <%= link_to search_path do %>
-      <span class="material-symbols-outlined navigation-icon">search</span>
-      <%# <div class="fas fa-search"></div> %>
-      <%# <i class="fas fa-search position-absolute z-index-10"></i> %>
-    <% end %>
-    <%# <%= link_to new_collection_path do %>
-      <%# <i class="fas fa-plus"></i>
-    <% end %>
+    <button class="btn btn-primary">List</button>
+    <button class="btn btn-primary">Generate</button>
   </div>
 </div>

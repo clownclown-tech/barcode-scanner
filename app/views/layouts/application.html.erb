@@ -28,9 +28,9 @@
 
   <body>
    <%# if browser.device.mobile? %>
-    <% if user_signed_in? %>
-      <%= render 'shared/navbar' %>
-    <%end%>
+
+
+
 
     <%= render 'shared/flashes' %>
     <div class="d-flex flex-column min-vh-100">
@@ -38,9 +38,9 @@
         <%= yield %>
       </div>
     </div>
-    <% if user_signed_in? %>
+
       <%= render 'shared/footer-navigation' %>
-    <%end%>
+
     <%# else %>
     <%# render "shared/non_mobile" %>
     <%# end %>
