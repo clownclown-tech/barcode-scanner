@@ -5,4 +5,6 @@ Rails.application.routes.draw do
 
   get '/qrcodes/:id(.:format)', to: 'qrcodes#show', as: 'qrcode'
 
+
+
 end

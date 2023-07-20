@@ -1,15 +1,66 @@
-<div class="container mt-4">
-    <div style="animation: myAnim 2s ease 0s 1 normal forwards;" id="qrcode"><%= raw @qrcode.as_html %>
-      <div class="d-flex justify-content-between">
-        <p><%= @heroku %></p>
-          <p><%#= @box.name %></p>
-      </div>
-      </div>
-    <div class="text-center">
 
-    <button class="btn btn-secondary" id="print">print</button>
-    </div>
-</div>
+    <%# <div style="animation: myAnim 2s ease 0s 1 normal forwards;" id="qrcode"><%= raw @qrcode.as_html %>
+
+<input type="text" id="barcodeValue" placeholder="Enter barcode value">
+<button class="btn btn secondary" onclick="generateBarcode()">Generate Barcode</button>
+
+<div id="barcode"></div>
+
+<button class="btn btn-secondary" id="print">print</button>
+
+
+<script src="https://cdn.jsdelivr.net/npm/jsbarcode@3.11.0/dist/JsBarcode.all.min.js"></script>
+<script>
+  function generateBarcode() {
+    const barcodeValue = document.getElementById('barcodeValue').value;
+    const barcodeDiv = document.getElementById('barcode');
+
+    // Clear the previous barcode, if any
+    barcodeDiv.innerHTML = '';
+
+    // Create a new canvas element to render the barcode
+    const canvas = document.createElement('canvas');
+    JsBarcode(canvas, barcodeValue, {
+      format: 'CODE128',
+      displayValue: true,
+      fontSize: 14,
+      width: 2,
+      height: 100
+    });
+
+    // Append the canvas to the barcode div
+    barcodeDiv.appendChild(canvas);
+  }
+</script>
+
+
+<input type="text" id="qrCodeValue" placeholder="Enter QR code value">
+<button onclick="generateQRCode()">Generate QR Code</button>
+<div id="qrcode"></div>
+
+
+<script src="https://cdn.rawgit.com/davidshimjs/qrcodejs/gh-pages/qrcode.min.js"></script>
+<script>
+  function generateQRCode() {
+    const qrCodeValue = document.getElementById('qrCodeValue').value;
+    const qrcodeDiv = document.getElementById('qrcode');
+
+    // Clear the previous QR code, if any
+    qrcodeDiv.innerHTML = '';
+
+    // Create a new QR code instance
+    const qrcode = new QRCode(qrcodeDiv, {
+      text: qrCodeValue,
+      width: 128,
+      height: 128,
+    });
+  }
+</script>
+
+
+
+
+
 
 <script>
 const printBtn = document.getElementById("print");

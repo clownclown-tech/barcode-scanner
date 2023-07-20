@@ -20,5 +20,4 @@ class QrcodesController < ApplicationController
 
 
 
-
 end
