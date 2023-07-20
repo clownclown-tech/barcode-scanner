@@ -8,13 +8,19 @@
 
     <%# <span class="material-symbols-outlined navigation-icon">search</span> %>
 
-    <button class="btn btn-primary">List</button>
-    <a href="<%= root_path %>" class="btn btn-primary">Scan</a>
+    <button class="btn btn-primary size">List</button>
+    <a href="<%= root_path %>" class="btn btn-primary size">Scan</a>
 
-    <a href="<%= qrcode_path(1)%>" class="btn btn-primary">Generate</a>
+    <a href="<%= qrcode_path(1)%>" class="btn btn-primary size">Generate</a>
 
 
 
 
   </div>
 </div>
+
+<style>
+ .size {
+  width: 96px;
+ }
+</style>
