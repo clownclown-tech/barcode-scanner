@@ -26,7 +26,7 @@
  // Function to save text to local storage
   function saveTextToLocalStorage() {
     const textArea = document.getElementById('result');
-    const text = textArea.value.trim();
+    const text = textArea.textContent.trim();
 
     if (text !== '') {
       // Retrieve the existing texts from local storage or create an empty array

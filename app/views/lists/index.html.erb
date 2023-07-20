@@ -1,10 +1,12 @@
+<br>
 <div class="d-flex justify-content-center">
   <div id="Links"></div>
   <br>
   <br>
 </div>
+<br>
 <div class="d-flex justify-content-center">
-  <button class="btn btn-secondary" onclick="loadTextFromLocalStorage()">LOAD</button>
+  <button id="load" class="btn btn-secondary" onclick="loadTextFromLocalStorage()">LOAD</button>
 </div>
 
 
@@ -48,5 +50,17 @@
     }
   }
 
+</script>
 
+<script>
+        // Function to auto-click the button when the site is loaded
+        function autoClickButton() {
+            const button = document.getElementById('load');
+
+            button.click();
+
+        }
+
+        // Register the function to be called when the site is loaded
+        window.onload = autoClickButton();
 </script>
