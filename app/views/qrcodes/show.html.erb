@@ -14,6 +14,7 @@
 <br>
 
 <button class="btn btn-secondary" id="print">print</button>
+<button class="btn btn-secondary">save to List</button>
 
 
 
@@ -69,7 +70,7 @@
 
 
 <script>
-const printBtn = document.getElementById("print");
+let printButton = document.getElementById("print");
 
 const print = () => {
   const printFrame = document.createElement("iframe");
@@ -82,7 +83,7 @@ const print = () => {
   printFrame.contentWindow.focus();
 }
 
-printBtn.addEventListener("click", function(){
+printButton.addEventListener("click", function(){
   print();
 })
 
