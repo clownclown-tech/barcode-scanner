@@ -1,20 +1,26 @@
-
+<br>
+<br>
     <%# <div style="animation: myAnim 2s ease 0s 1 normal forwards;" id="qrcode"><%= raw @qrcode.as_html %>
+<%# <div class="">
+    <input type="text" id="barcodeValue" placeholder="Enter barcode value">
+    <button class="btn btn-secondary" onclick="generateBarcode()">Generate Barcode</button>
+    <div id="barcode"></div>
+</div> %>
 
-<input type="text" id="barcodeValue" placeholder="Enter barcode value">
-<button class="btn btn-secondary" onclick="generateBarcode()">Generate Barcode</button>
-<div id="barcode"></div>
+<br>
+
+<div class="">
+    <input type="text" id="qrCodeValue" placeholder="Enter QR code value">
+    <button class="btn btn-secondary" onclick="generateQRCode()">Generate QR Code</button>
+    <div id="qrcode"></div>
+</div>
 
 <br>
 
-<input type="text" id="qrCodeValue" placeholder="Enter QR code value">
-<button class="btn btn-secondary" onclick="generateQRCode()">Generate QR Code</button>
-<div id="qrcode"></div>
 
-<br>
 <div class="d-flex justify-content-evenly">
   <button class="btn btn-dark" id="print">print</button>
-  <button class="btn btn-success" onclick="saveQRCodeToLocalStorage()">save to List</button>
+  <%# <button class="btn btn-success" onclick="saveQRCodeToLocalStorage()">save to List</button> %>
 </div>
 
 
@@ -24,7 +30,6 @@
 
 
 <script>
-
 
 
 
@@ -69,20 +74,20 @@
 
 
 
-  function saveQRCodeToLocalStorage() {
-    const qrcodeDiv = document.getElementById('qrcode');
+  // function saveQRCodeToLocalStorage() {
+  //   const qrcodeDiv = document.getElementById('qrcode');
 
-    // Get the canvas element containing the QR code
-    const qrCodeCanvas = qrcodeDiv.querySelector('canvas');
+  //   // Get the canvas element containing the QR code
+  //   const qrCodeCanvas = qrcodeDiv.querySelector('canvas');
 
-    // Get the data URL of the QR code image
-    const dataURL = qrCodeCanvas.toDataURL();
+  //   // Get the data URL of the QR code image
+  //   const dataURL = qrCodeCanvas.toDataURL();
 
-    // Save the data URL to local storage
-    localStorage.setItem('qrcode', dataURL);
+  //   // Save the data URL to local storage
+  //   localStorage.setItem('qrcode', dataURL);
 
-    alert('QR code saved to local storage!');
-  }
+  //   alert('QR code saved to local storage!');
+  // }
 </script>
 
 
