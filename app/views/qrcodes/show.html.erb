@@ -20,7 +20,32 @@
 
 
 <script src="https://cdn.jsdelivr.net/npm/jsbarcode@3.11.0/dist/JsBarcode.all.min.js"></script>
+<script src="https://cdn.rawgit.com/davidshimjs/qrcodejs/gh-pages/qrcode.min.js"></script>
+
+
 <script>
+
+
+
+
+  function generateQRCode() {
+    const qrCodeValue = document.getElementById('qrCodeValue').value;
+    const qrcodeDiv = document.getElementById('qrcode');
+
+    // Clear the previous QR code, if any
+    qrcodeDiv.innerHTML = '';
+
+    // Create a new QR code instance
+    const qrcode = new QRCode(qrcodeDiv, {
+      text: qrCodeValue,
+      width: 128,
+      height: 128,
+    });
+  }
+
+
+
+
   function generateBarcode() {
     const barcodeValue = document.getElementById('barcodeValue').value;
     const barcodeDiv = document.getElementById('barcode');
@@ -42,6 +67,8 @@
     barcodeDiv.appendChild(canvas);
   }
 
+
+
   function saveQRCodeToLocalStorage() {
     const qrcodeDiv = document.getElementById('qrcode');
 
@@ -59,26 +86,6 @@
 </script>
 
 
-
-
-
-<script src="https://cdn.rawgit.com/davidshimjs/qrcodejs/gh-pages/qrcode.min.js"></script>
-<script>
-  function generateQRCode() {
-    const qrCodeValue = document.getElementById('qrCodeValue').value;
-    const qrcodeDiv = document.getElementById('qrcode');
-
-    // Clear the previous QR code, if any
-    qrcodeDiv.innerHTML = '';
-
-    // Create a new QR code instance
-    const qrcode = new QRCode(qrcodeDiv, {
-      text: qrCodeValue,
-      width: 128,
-      height: 128,
-    });
-  }
-</script>
 
 
 
