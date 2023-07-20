@@ -1,0 +1,39 @@
+<p>lhbvkjhvkhgvkhgcv</p>
+
+<div id="qrcodeImageContainer"></div>
+
+
+
+<script>
+  function fetchQRCodeFromLocalStorage() {
+    const qrcodeImageContainer = document.getElementById('qrcodeImageContainer');
+
+    // Get the data URL from local storage
+    const dataURL = localStorage.getItem('qrcode');
+
+    if (dataURL) {
+      // Create an image element
+      const imgElement = document.createElement('img');
+
+      // Set the image source to the data URL
+      imgElement.src = dataURL;
+      imgElement.alt = 'QR Code';
+
+      // Append the image element to the container
+      qrcodeImageContainer.appendChild(imgElement);
+    } else {
+      alert('QR code not found in local storage!');
+    }
+  }
+
+   function checkLocalStorage(key) {
+    const value = localStorage.getItem(key);
+    if (value) {
+      console.log(`Value for key "${key}" exists in local storage: ${value}`);
+      return true;
+    } else {
+      console.log(`Value for key "${key}" does not exist in local storage.`);
+      return false;
+    }
+  }
+</script>

@@ -14,7 +14,7 @@
 <br>
 <div class="d-flex justify-content-evenly">
   <button class="btn btn-dark" id="print">print</button>
-  <button class="btn btn-success">save to List</button>
+  <button class="btn btn-success" onclick="saveQRCodeToLocalStorage()">save to List</button>
 </div>
 
 
@@ -40,6 +40,21 @@
 
     // Append the canvas to the barcode div
     barcodeDiv.appendChild(canvas);
+  }
+
+  function saveQRCodeToLocalStorage() {
+    const qrcodeDiv = document.getElementById('qrcode');
+
+    // Get the canvas element containing the QR code
+    const qrCodeCanvas = qrcodeDiv.querySelector('canvas');
+
+    // Get the data URL of the QR code image
+    const dataURL = qrCodeCanvas.toDataURL();
+
+    // Save the data URL to local storage
+    localStorage.setItem('qrcode', dataURL);
+
+    alert('QR code saved to local storage!');
   }
 </script>
 
