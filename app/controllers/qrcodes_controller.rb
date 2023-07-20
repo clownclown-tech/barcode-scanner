@@ -3,8 +3,8 @@ require "rqrcode"
 class QrcodesController < ApplicationController
 
   def show
-    @box = Box.find(params[:box_id])
-    @heroku = "https://www.boxtag.me/boxes/#{@box.id}"
+    # @box = Box.find(params[:box_id])
+    # @heroku = "https://www.boxtag.me/boxes/#{@box.id}"
     # https + @box
 
     # @qrcode = RQRCode::QRCode.new("https://kyan.com")
