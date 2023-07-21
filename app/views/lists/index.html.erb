@@ -6,13 +6,30 @@
 </div>
 <br>
 <div class="d-flex justify-content-center">
-  <button id="load" class="btn btn-secondary" onclick="loadTextFromLocalStorage()">LOAD</button>
+  <button id="load" class="btn btn-secondary" onclick="loadTextFromLocalStorage()">Load</button>
+  <button id="reset" class="btn btn-secondary" onclick="resetList()">Reset List</button>
+
 </div>
 
 
 
 
 <script>
+
+  function resetList() {
+
+      let texts = [];
+
+
+
+      // Save the updated array back to local storage
+      localStorage.setItem('savedTexts', JSON.stringify(texts));
+      loadTextFromLocalStorage();
+
+
+  }
+
+
   // Function to load texts from local storage and display them as links
   function loadTextFromLocalStorage() {
     const savedTextsContainer = document.getElementById('Links');
