@@ -12,7 +12,7 @@
 <div class="">
     <input type="text" id="qrCodeValue" placeholder="Enter QR code value">
     <button class="btn btn-secondary" onclick="generateQRCode()">Generate QR Code</button>
-    <div id="qrcode"></div>
+    <div style="animation: myAnim 2s ease 0s 1 normal forwards;"id="qrcode" title="www.google.com"></div>
 </div>
 
 <br>
@@ -43,8 +43,8 @@
     // Create a new QR code instance
     const qrcode = new QRCode(qrcodeDiv, {
       text: qrCodeValue,
-      width: 128,
-      height: 128,
+      width: 256,
+      height: 256,
     });
   }
 
